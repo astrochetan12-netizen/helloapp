@@ -1,12 +1,15 @@
 public class HelloAPP {
     public static void main(String[] args) {
 
-        // Check if user gave input
+        String name;
+
+        // Check if argument is given
         if (args.length > 0) {
-            String name = args[0];
-            System.out.println("Hello, " + name + "!");
+            name = args[0];
         } else {
-            System.out.println("Hello, World!");
+            name = "World";
         }
+
+        System.out.println("Hello, " + name + "!");
     }
 }
