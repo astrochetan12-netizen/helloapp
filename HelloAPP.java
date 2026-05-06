@@ -1,28 +1,30 @@
-public class HelloAPP {
+public class HelloAPP {git checkout -b feature/UC6-substring-method
 
     public static void main(String[] args) {
 
-        // Default case
+        // Default greeting if no arguments are provided
         if (args.length == 0) {
+
             System.out.println("Hello, World!");
+
         } else {
 
             StringBuilder nameBuilder = new StringBuilder();
-            boolean first = true;
 
             // Enhanced for loop
             for (String name : args) {
-
-                // Add comma only after first name
-                if (!first) {
-                    nameBuilder.append(", ");
-                }
-
-                nameBuilder.append(name);
-                first = false;
+                nameBuilder.append(name).append(", ");
             }
 
-            System.out.println("Hello, " + nameBuilder + "!");
+            // Remove trailing comma and space using substring()
+            String names = "";
+
+            if (nameBuilder.length() > 0) {
+                names = nameBuilder.substring(0, nameBuilder.length() - 2);
+            }
+
+            // Display greeting
+            System.out.println("Hello, " + names + "!");
         }
     }
 }
