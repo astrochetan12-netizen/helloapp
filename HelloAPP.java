@@ -1,30 +1,15 @@
-public class HelloAPP {git checkout -b feature/UC6-substring-method
+public class HelloAPPgit checkout -b feature/UC7-string-join {
 
     public static void main(String[] args) {
 
-        // Default greeting if no arguments are provided
-        if (args.length == 0) {
+        String names = "World";
 
-            System.out.println("Hello, World!");
-
-        } else {
-
-            StringBuilder nameBuilder = new StringBuilder();
-
-            // Enhanced for loop
-            for (String name : args) {
-                nameBuilder.append(name).append(", ");
-            }
-
-            // Remove trailing comma and space using substring()
-            String names = "";
-
-            if (nameBuilder.length() > 0) {
-                names = nameBuilder.substring(0, nameBuilder.length() - 2);
-            }
-
-            // Display greeting
-            System.out.println("Hello, " + names + "!");
+        // If arguments are provided
+        if (args.length > 0) {
+            names = String.join(", ", args);
         }
+
+        // Print greeting
+        System.out.println("Hello, " + names + "!");
     }
 }
